@@ -3,7 +3,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:viewmodel="clr-namespace:FoodFinance.ViewModels"
   x:Class="FoodFinance.Views.SettingsPage"
-  Title="Configurações"
+  Title="ConfiguraÃ§Ãµes"
   BackgroundColor="{DynamicResource PageBackgroundColor}">
 
   <ContentPage.BindingContext>
@@ -13,7 +13,7 @@
   <ScrollView>
     <VerticalStackLayout Padding="20" Spacing="20">
 
-<Label Text="Configurações"
+<Label Text="ConfiguraÃ§Ãµes"
         FontSize="32"
      FontAttributes="Bold"
    HorizontalOptions="Center"
@@ -39,7 +39,7 @@
         Color="{DynamicResource Gray200}"
      Margin="0,10" />
 
-     <Label Text="Preço da Gasolina (R$/L)" 
+     <Label Text="PreÃ§o do litro da gasolina" 
        FontSize="16" 
     FontAttributes="Bold"
             TextColor="{DynamicResource Gray900}" />
@@ -67,7 +67,7 @@
             Color="{DynamicResource Gray200}"
  Margin="0,10" />
 
-          <Label Text="Manutenção por Km (R$)" 
+          <Label Text="ManutenÃ§Ã£o por Km (R$)" 
             FontSize="16" 
    FontAttributes="Bold"
             TextColor="{DynamicResource Gray900}" />
@@ -80,7 +80,7 @@
         </VerticalStackLayout>
       </Frame>
 
-    <Button Text="Salvar Configurações"
+    <Button Text="Salvar ConfiguraÃ§Ãµes"
 Command="{Binding SaveSettingsCommand}"
         BackgroundColor="{DynamicResource Primary}"
  TextColor="White"
