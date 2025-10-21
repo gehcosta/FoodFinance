@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FoodFinance.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:FoodFinance.Views"
+    Title="FoodFinance">
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{DynamicResource Primary}" 
+     HeightRequest="150" 
+          Padding="20">
+    <VerticalStackLayout VerticalOptions="Center">
+      <Label Text="FoodFinance" 
+ FontSize="28" 
+  FontAttributes="Bold" 
+      TextColor="White" 
+     HorizontalOptions="Start" />
+ <Label Text="Gestão de Entregas" 
+    FontSize="14" 
+            TextColor="White" 
+         Opacity="0.8" 
+      HorizontalOptions="Start" />
+        </VerticalStackLayout>
+        </Grid>
+  </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Registro Diário" 
+    Icon="{OnPlatform Android=baseline_add_circle_24.png, iOS=plus.circle.fill, WinUI=AddCircle, MacCatalyst=plus.circle.fill}">
+        <ShellContent ContentTemplate="{DataTemplate views:DayEntryPage}" 
+           Route="DayEntry" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Faturamento" 
+ Icon="{OnPlatform Android=baseline_bar_chart_24.png, iOS=chart.bar.fill, WinUI=BarChart, MacCatalyst=chart.bar.fill}">
+     <ShellContent ContentTemplate="{DataTemplate views:RevenuePage}" 
+          Route="Revenue" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configurações" 
+           Icon="{OnPlatform Android=baseline_settings_24.png, iOS=gearshape.fill, WinUI=Settings, MacCatalyst=gearshape.fill}">
+  <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" 
+           Route="Settings" />
+    </FlyoutItem>
+
+</Shell>

@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FoodFinance</name>
+    </assembly>
+    <members>
+        <member name="M:FoodFinance.Helpers.RevenueCalculator.CalculateNetRevenue(System.Decimal,System.Single,System.Decimal,System.Single,System.Decimal)">
+            <summary>
+            Calcula o faturamento líquido considerando custos de combustível e manutenção
+            </summary>
+            <param name="earned">Valor ganho</param>
+            <param name="km">Quilometragem percorrida</param>
+            <param name="gasPrice">Preço da gasolina por litro</param>
+            <param name="kmPerLiter">Km por litro do veículo</param>
+            <param name="maintenancePerKm">Custo de manutenção por km</param>
+            <returns>Valor líquido após descontar custos</returns>
+        </member>
+        <member name="M:FoodFinance.Helpers.RevenueCalculator.CalculateDetailedRevenue(System.Decimal,System.Single,FoodFinance.Models.Settings)">
+            <summary>
+            Calcula todos os custos e retorna um resumo detalhado
+            </summary>
+        </member>
+        <member name="M:FoodFinance.Helpers.ValidationHelper.IsValidDecimal(System.String,System.Decimal@)">
+            <summary>
+            Valida se um valor decimal é válido e positivo
+            </summary>
+        </member>
+        <member name="M:FoodFinance.Helpers.ValidationHelper.IsValidFloat(System.String,System.Single@)">
+            <summary>
+            Valida se um valor float é válido e positivo
+            </summary>
+        </member>
+        <member name="M:FoodFinance.Helpers.ValidationHelper.FormatCurrency(System.Decimal)">
+            <summary>
+            Formata um valor decimal para exibição em moeda brasileira
+            </summary>
+        </member>
+        <member name="M:FoodFinance.Helpers.ValidationHelper.FormatTimeSpan(System.TimeSpan)">
+            <summary>
+            Formata um TimeSpan para exibição
+            </summary>
+        </member>
+        <member name="M:FoodFinance.Helpers.ValidationHelper.IsValidDate(System.DateTime)">
+            <summary>
+            Valida se uma data é válida (não é futura)
+            </summary>
+        </member>
+        <member name="M:FoodFinance.Helpers.ValidationHelper.CleanNumericInput(System.String)">
+            <summary>
+            Limpa caracteres não numéricos mantendo ponto e vírgula
+            </summary>
+        </member>
+        <member name="T:FoodFinance.ViewModels.DayEntryViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.DayEntryViewModel.Date">
+            <inheritdoc cref="F:FoodFinance.ViewModels.DayEntryViewModel.date"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.DayEntryViewModel.Km">
+            <inheritdoc cref="F:FoodFinance.ViewModels.DayEntryViewModel.km"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.DayEntryViewModel.Earned">
+            <inheritdoc cref="F:FoodFinance.ViewModels.DayEntryViewModel.earned"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.DayEntryViewModel.TimerRunning">
+            <inheritdoc cref="F:FoodFinance.ViewModels.DayEntryViewModel.timerRunning"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.DayEntryViewModel.ElapsedTimeText">
+            <inheritdoc cref="F:FoodFinance.ViewModels.DayEntryViewModel.elapsedTimeText"/>
+        </member>
+        <member name="F:FoodFinance.ViewModels.DayEntryViewModel.toggleTimerCommand">
+            <summary>The backing field for <see cref="P:FoodFinance.ViewModels.DayEntryViewModel.ToggleTimerCommand"/>.</summary>
+        </member>
+        <member name="P:FoodFinance.ViewModels.DayEntryViewModel.ToggleTimerCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FoodFinance.ViewModels.DayEntryViewModel.ToggleTimer"/>.</summary>
+        </member>
+        <member name="F:FoodFinance.ViewModels.DayEntryViewModel.finalizeDayCommand">
+            <summary>The backing field for <see cref="P:FoodFinance.ViewModels.DayEntryViewModel.FinalizeDayCommand"/>.</summary>
+        </member>
+        <member name="P:FoodFinance.ViewModels.DayEntryViewModel.FinalizeDayCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FoodFinance.ViewModels.DayEntryViewModel.FinalizeDay"/>.</summary>
+        </member>
+        <member name="T:FoodFinance.ViewModels.RevenueViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.Entries">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.entries"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.TotalEarned">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.totalEarned"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.TotalGasCost">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.totalGasCost"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.TotalMaintenanceCost">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.totalMaintenanceCost"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.NetRevenue">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.netRevenue"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.TotalKm">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.totalKm"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.TotalWorkTime">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.totalWorkTime"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.SelectedDate">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.selectedDate"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.ViewMode">
+            <inheritdoc cref="F:FoodFinance.ViewModels.RevenueViewModel.viewMode"/>
+        </member>
+        <member name="M:FoodFinance.ViewModels.RevenueViewModel.OnSelectedDateChanged(System.DateTime)">
+            <summary>Executes the logic for when <see cref="P:FoodFinance.ViewModels.RevenueViewModel.SelectedDate"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FoodFinance.ViewModels.RevenueViewModel.SelectedDate"/> is changed.</remarks>
+        </member>
+        <member name="M:FoodFinance.ViewModels.RevenueViewModel.OnViewModeChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:FoodFinance.ViewModels.RevenueViewModel.ViewMode"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FoodFinance.ViewModels.RevenueViewModel.ViewMode"/> is changed.</remarks>
+        </member>
+        <member name="F:FoodFinance.ViewModels.RevenueViewModel.deleteEntryCommand">
+            <summary>The backing field for <see cref="P:FoodFinance.ViewModels.RevenueViewModel.DeleteEntryCommand"/>.</summary>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.DeleteEntryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FoodFinance.ViewModels.RevenueViewModel.DeleteEntry(FoodFinance.Models.DayEntry)"/>.</summary>
+        </member>
+        <member name="F:FoodFinance.ViewModels.RevenueViewModel.editEntryCommand">
+            <summary>The backing field for <see cref="P:FoodFinance.ViewModels.RevenueViewModel.EditEntryCommand"/>.</summary>
+        </member>
+        <member name="P:FoodFinance.ViewModels.RevenueViewModel.EditEntryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FoodFinance.ViewModels.RevenueViewModel.EditEntry(FoodFinance.Models.DayEntry)"/>.</summary>
+        </member>
+        <member name="T:FoodFinance.ViewModels.SettingsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.SettingsViewModel.SelectedTheme">
+            <inheritdoc cref="F:FoodFinance.ViewModels.SettingsViewModel.selectedTheme"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.SettingsViewModel.GasPrice">
+            <inheritdoc cref="F:FoodFinance.ViewModels.SettingsViewModel.gasPrice"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.SettingsViewModel.KmPerLiter">
+            <inheritdoc cref="F:FoodFinance.ViewModels.SettingsViewModel.kmPerLiter"/>
+        </member>
+        <member name="P:FoodFinance.ViewModels.SettingsViewModel.MaintenancePerKm">
+            <inheritdoc cref="F:FoodFinance.ViewModels.SettingsViewModel.maintenancePerKm"/>
+        </member>
+        <member name="F:FoodFinance.ViewModels.SettingsViewModel.saveSettingsCommand">
+            <summary>The backing field for <see cref="P:FoodFinance.ViewModels.SettingsViewModel.SaveSettingsCommand"/>.</summary>
+        </member>
+        <member name="P:FoodFinance.ViewModels.SettingsViewModel.SaveSettingsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FoodFinance.ViewModels.SettingsViewModel.SaveSettings"/>.</summary>
+        </member>
+        <member name="T:FoodFinance.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Date">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Date" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Km">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Km" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Earned">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Earned" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TimerRunning">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TimerRunning" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ElapsedTimeText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ElapsedTimeText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Entries">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Entries" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalEarned">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalEarned" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalGasCost">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalGasCost" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalMaintenanceCost">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalMaintenanceCost" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NetRevenue">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NetRevenue" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalKm">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalKm" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalWorkTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalWorkTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ViewMode">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ViewMode" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedTheme">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedTheme" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.GasPrice">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "GasPrice" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.KmPerLiter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "KmPerLiter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MaintenancePerKm">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MaintenancePerKm" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Date">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Date" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Km">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Km" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Earned">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Earned" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TimerRunning">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TimerRunning" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ElapsedTimeText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ElapsedTimeText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Entries">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Entries" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalEarned">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalEarned" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalGasCost">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalGasCost" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalMaintenanceCost">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalMaintenanceCost" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NetRevenue">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NetRevenue" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalKm">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalKm" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalWorkTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalWorkTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ViewMode">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ViewMode" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedTheme">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedTheme" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.GasPrice">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "GasPrice" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.KmPerLiter">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "KmPerLiter" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MaintenancePerKm">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MaintenancePerKm" generated properties.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:FoodFinance.ViewModels"
+ x:Class="FoodFinance.Views.RevenuePage"
+  Title="Faturamento"
+  BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+  <ContentPage.BindingContext>
+   <viewmodel:RevenueViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+ <VerticalStackLayout Padding="20" Spacing="20">
+
+<Label Text="Faturamento"
+ FontSize="32"
+     FontAttributes="Bold"
+     HorizontalOptions="Center"
+ TextColor="{DynamicResource Primary}"
+Margin="0,0,0,10" />
+
+    <Frame Padding="10" 
+    CornerRadius="10" 
+      HasShadow="True"
+        BackgroundColor="{DynamicResource CardBackgroundColor}">
+        <HorizontalStackLayout Spacing="10">
+  <Label Text="Visualização:" 
+    FontSize="16" 
+     VerticalOptions="Center"
+        TextColor="{DynamicResource Gray900}" />
+     <Picker ItemsSource="{Binding ViewModes}"
+  SelectedItem="{Binding ViewMode}"
+ FontSize="16"
+  HorizontalOptions="FillAndExpand" />
+    </HorizontalStackLayout>
+   </Frame>
+
+     <Frame Padding="10" 
+ CornerRadius="10" 
+     HasShadow="True"
+  BackgroundColor="{DynamicResource CardBackgroundColor}">
+   <HorizontalStackLayout Spacing="10">
+ <Label Text="Data:" 
+  FontSize="16" 
+    VerticalOptions="Center"
+            TextColor="{DynamicResource Gray900}" />
+  <DatePicker Date="{Binding SelectedDate}"
+FontSize="16"
+        HorizontalOptions="FillAndExpand" />
+ </HorizontalStackLayout>
+    </Frame>
+
+<Frame Padding="15" CornerRadius="10" HasShadow="True" BackgroundColor="{DynamicResource Primary}">
+    <VerticalStackLayout Spacing="10">
+   <Label Text="Resumo Financeiro" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
+ 
+    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="8">
+ 
+ <Label Grid.Row="0" Grid.Column="0" Text="Total Ganho:" TextColor="White" FontSize="14" />
+  <Label Grid.Row="0" Grid.Column="1" Text="{Binding TotalEarned, StringFormat='R$ {0:F2}'}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalTextAlignment="End" />
+
+    <Label Grid.Row="1" Grid.Column="0" Text="Custo Gasolina:" TextColor="White" FontSize="14" />
+ <Label Grid.Row="1" Grid.Column="1" Text="{Binding TotalGasCost, StringFormat='R$ {0:F2}'}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalTextAlignment="End" />
+
+ <Label Grid.Row="2" Grid.Column="0" Text="Custo Manutenção:" TextColor="White" FontSize="14" />
+ <Label Grid.Row="2" Grid.Column="1" Text="{Binding TotalMaintenanceCost, StringFormat='R$ {0:F2}'}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalTextAlignment="End" />
+
+  <Label Grid.Row="3" Grid.Column="0" Text="Total Km:" TextColor="White" FontSize="14" />
+     <Label Grid.Row="3" Grid.Column="1" Text="{Binding TotalKm, StringFormat='{0:F2} km'}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalTextAlignment="End" />
+
+<Label Grid.Row="4" Grid.Column="0" Text="Tempo Total:" TextColor="White" FontSize="14" />
+   <Label Grid.Row="4" Grid.Column="1" Text="{Binding TotalWorkTime}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalTextAlignment="End" />
+
+ </Grid>
+
+  <BoxView HeightRequest="2" Color="White" Margin="0,10" />
+
+  <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+  <Label Text="Lucro Líquido:" TextColor="White" FontSize="18" FontAttributes="Bold" />
+ <Label Text="{Binding NetRevenue, StringFormat='R$ {0:F2}'}" TextColor="#FFD700" FontSize="24" FontAttributes="Bold" />
+    </HorizontalStackLayout>
+ </VerticalStackLayout>
+        </Frame>
+
+<Frame Padding="15" 
+  CornerRadius="10" 
+HasShadow="True"
+        BackgroundColor="{DynamicResource CardBackgroundColor}">
+     <VerticalStackLayout Spacing="10">
+    <Label Text="Detalhes das Entregas" 
+    FontSize="18" 
+FontAttributes="Bold"
+   TextColor="{DynamicResource Gray900}" />
+   
+  <CollectionView ItemsSource="{Binding Entries}">
+   <CollectionView.EmptyView>
+       <Label Text="Nenhuma entrega registrada neste período." 
+        HorizontalOptions="Center"
+Margin="20"
+       TextColor="{DynamicResource Gray600}" />
+    </CollectionView.EmptyView>
+   <CollectionView.ItemTemplate>
+     <DataTemplate>
+       <Frame Padding="10" 
+   Margin="0,5" 
+CornerRadius="8" 
+ HasShadow="False"
+                BackgroundColor="{DynamicResource CardBackgroundColor}"
+      BorderColor="{DynamicResource Gray200}">
+        <VerticalStackLayout Spacing="8">
+<Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" RowSpacing="5">
+  
+    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" FontAttributes="Bold" TextColor="{DynamicResource Primary}" />
+   <Label Grid.Row="0" Grid.Column="1" Text="{Binding Earned, StringFormat='R$ {0:F2}'}" FontSize="16" FontAttributes="Bold" TextColor="{DynamicResource Primary}" HorizontalTextAlignment="End" />
+
+ <Label Grid.Row="1" Grid.Column="0" Text="{Binding Km, StringFormat='{0:F2} km'}" FontSize="14" TextColor="{DynamicResource Gray600}" />
+   <Label Grid.Row="1" Grid.Column="1" Text="{Binding WorkTime, StringFormat='{0:hh\\:mm\\:ss}'}" FontSize="14" TextColor="{DynamicResource Gray600}" HorizontalTextAlignment="End" />
+
+         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding StartTime, StringFormat='Horário: {0:hh\\:mm}'}" FontSize="12" TextColor="{DynamicResource Gray500}" />
+
+  </Grid>
+   
+  <!-- Botões de Editar e Deletar -->
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="End" Margin="0,5,0,0">
+            <Button Text="Editar"
+        FontSize="12"
+      Padding="10,5"
+    CornerRadius="5"
+     BackgroundColor="{DynamicResource Secondary}"
+       TextColor="White"
+         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RevenueViewModel}}, Path=EditEntryCommand}"
+       CommandParameter="{Binding .}" />
+
+    <Button Text="Deletar"
+     FontSize="12"
+ Padding="10,5"
+         CornerRadius="5"
+         BackgroundColor="#DC3545"
+      TextColor="White"
+       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RevenueViewModel}}, Path=DeleteEntryCommand}"
+   CommandParameter="{Binding .}" />
+      </HorizontalStackLayout>
+        </VerticalStackLayout>
+       </Frame>
+ </DataTemplate>
+</CollectionView.ItemTemplate>
+ </CollectionView>
+ </VerticalStackLayout>
+  </Frame>
+
+     </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
