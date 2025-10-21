@@ -3,8 +3,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:viewmodel="clr-namespace:FoodFinance.ViewModels"
   x:Class="FoodFinance.Views.SettingsPage"
-  Title="Configurações"
-  BackgroundColor="{DynamicResource PageBackgroundColor}">
+  Title="Configurações">
 
   <ContentPage.BindingContext>
       <viewmodel:SettingsViewModel />
@@ -20,62 +19,49 @@
         TextColor="{DynamicResource Primary}"
   Margin="0,0,0,20" />
 
- <Frame Padding="15" 
-        CornerRadius="10" 
-        HasShadow="True"
- BackgroundColor="{DynamicResource CardBackgroundColor}">
+ <Frame Padding="15" Style="{StaticResource CardFrame}">
   <VerticalStackLayout Spacing="15">
 
           <Label Text="Tema do Aplicativo" 
   FontSize="16" 
-            FontAttributes="Bold"
-      TextColor="{DynamicResource Gray900}" />
+            FontAttributes="Bold"/>
     <Picker ItemsSource="{Binding Themes}"
       SelectedItem="{Binding SelectedTheme}"
             FontSize="16"
             HorizontalOptions="Fill" />
 
           <BoxView HeightRequest="1" 
-        Color="{DynamicResource Gray200}"
      Margin="0,10" />
 
-     <Label Text="Preço do litro da gasolina" 
+     <Label Text="Preço da Gasolina (R$/L)" 
        FontSize="16" 
-    FontAttributes="Bold"
-            TextColor="{DynamicResource Gray900}" />
+    FontAttributes="Bold"/>
           <Entry Text="{Binding GasPrice}"
        Keyboard="Numeric"
             FontSize="16"
-        Placeholder="Ex: 6.50"
-  PlaceholderColor="{DynamicResource Gray400}" />
+        Placeholder="Ex: 6.50"/>
 
     <BoxView HeightRequest="1" 
-     Color="{DynamicResource Gray200}"
       Margin="0,10" />
 
           <Label Text="Km por Litro" 
    FontSize="16" 
-    FontAttributes="Bold"
-  TextColor="{DynamicResource Gray900}" />
+    FontAttributes="Bold"/>
        <Entry Text="{Binding KmPerLiter}"
        Keyboard="Numeric"
     FontSize="16"
-         Placeholder="Ex: 30"
-  PlaceholderColor="{DynamicResource Gray400}" />
+         Placeholder="Ex: 30"/>
 
      <BoxView HeightRequest="1" 
-            Color="{DynamicResource Gray200}"
  Margin="0,10" />
 
           <Label Text="Manutenção por Km (R$)" 
             FontSize="16" 
-   FontAttributes="Bold"
-            TextColor="{DynamicResource Gray900}" />
+   FontAttributes="Bold"/>
           <Entry Text="{Binding MaintenancePerKm}"
      Keyboard="Numeric"
             FontSize="16"
-          Placeholder="Ex: 0.20"
-   PlaceholderColor="{DynamicResource Gray400}" />
+          Placeholder="Ex: 0.20"/>
 
         </VerticalStackLayout>
       </Frame>

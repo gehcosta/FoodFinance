@@ -4,8 +4,7 @@
     xmlns:viewmodel="clr-namespace:FoodFinance.ViewModels"
     xmlns:converters="clr-namespace:FoodFinance.Converters"
     x:Class="FoodFinance.Views.DayEntryPage"
-    Title="Registro Diário"
-    BackgroundColor="{DynamicResource PageBackgroundColor}">
+    Title="Registro Diário">
 
     <ContentPage.Resources>
       <converters:TimerTextConverter x:Key="TimerTextConverter" />
@@ -30,42 +29,33 @@
    TextColor="{DynamicResource Gray600}"
          Margin="0,0,0,20" />
 
-          <Frame Padding="15" 
-  CornerRadius="10" 
-    HasShadow="True"
-    BackgroundColor="{DynamicResource CardBackgroundColor}">
+          <Frame Padding="15" Style="{StaticResource CardFrame}">
           <VerticalStackLayout Spacing="15">
 
 <Label Text="Data" 
-    FontSize="14"
-     TextColor="{DynamicResource Gray600}" />
+    FontSize="14"/>
         <DatePicker Date="{Binding Date}"
    FontSize="16"
 HorizontalOptions="Fill" />
 
          <Label Text="Km percorridos" 
       FontSize="14" 
-   TextColor="{DynamicResource Gray600}"
     Margin="0,10,0,0" />
       <Entry Placeholder="Ex: 27.5"
          Keyboard="Numeric"
      Text="{Binding Km}"
-   FontSize="16"
-  PlaceholderColor="{DynamicResource Gray400}" />
+   FontSize="16"/>
 
           <Label Text="Ganho do dia (R$)" 
  FontSize="14" 
-     TextColor="{DynamicResource Gray600}"
          Margin="0,10,0,0" />
     <Entry Placeholder="Ex: 51.42"
      Keyboard="Numeric"
    Text="{Binding Earned}"
-  FontSize="16"
-   PlaceholderColor="{DynamicResource Gray400}" />
+  FontSize="16"/>
 
   <Label Text="Tempo trabalhado" 
        FontSize="14" 
-      TextColor="{DynamicResource Gray600}"
  Margin="0,10,0,0" />
    <Label Text="{Binding ElapsedTimeText}"
        FontSize="32"
